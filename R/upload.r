@@ -30,7 +30,7 @@ upload_file <- function(file_name, title = basename(file_name),
   resp <- content(req)
   
   if (!is.null(email)) {
-    perm_id <- add_permission(resp$id, email = email, ...)
+    perm_id <- add_permission(resp$id, email = email, token = token, ...)
   }
   
   return(resp$id)

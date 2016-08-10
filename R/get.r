@@ -49,7 +49,7 @@ get_file <- function(file_id, token = get_access_cred()) {
 get_file_from_title <- function(title, token = get_access_cred()) {
   file_list <- list_files_from_title(title)
   file_id <- file_list$items[[1]]$id
-  get_file(file_id)
+  get_file(file_id, token = token)
 }
 
 #' Download a file from drive
