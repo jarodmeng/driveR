@@ -4,17 +4,21 @@
 \alias{upload_file}
 \title{upload a file to Google Drive}
 \usage{
-upload_file(file_name, title = file_name, type = NULL,
-  token = get_access_cred())
+upload_file(file_name, title = file_name, file_type = NULL, email = NULL,
+  token = get_access_cred(), ...)
 }
 \arguments{
 \item{file_name}{file name}
 
 \item{title}{file title}
 
-\item{type}{mime type of the file}
+\item{file_type}{mime type of the file}
+
+\item{email}{email address to add to permission list}
 
 \item{token}{a valid OAuth2.0 token}
+
+\item{...}{any other arguments to be passed to add_permission()}
 }
 \value{
 ID of the uploaded file
