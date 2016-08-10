@@ -1,5 +1,20 @@
 base_url <- "https://www.googleapis.com/drive/v2/files"
 
+#' List all files
+#' @export
+#' @param order_by a comma-separated list of sort keys
+#' @param token a valid OAuth2.0 token
+#' @return file resources
+list_all_files <- function(order_by = NULL, token = get_access_cred()) {
+  query <- list(q = "trashed = false")
+  if (!is.null(order_by)) {
+    query = c(query, list(orderBy = order_by))
+  }
+  req <- GET(base_url, config = config(token = token), query = query)
+  stop_for_status(req)
+  content(req)
+}
+
 #' List files using file title
 #' @param title file title
 #' @param token a valid OAuth2.0 token
