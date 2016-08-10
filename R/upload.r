@@ -9,8 +9,9 @@ upload_url <- "https://www.googleapis.com/upload/drive/v2/files"
 #' @param ... any other arguments to be passed to add_permission()
 #' @return ID of the uploaded file
 #' @export
-upload_file <- function(file_name, title = file_name, file_type = NULL,
-                        email = NULL, token = get_access_cred(), ...) {
+upload_file <- function(file_name, title = basename(file_name),
+                        file_type = NULL, email = NULL,
+                        token = get_access_cred(), ...) {
   url <- upload_url
 
   metadata <- tempfile()

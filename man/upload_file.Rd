@@ -4,8 +4,8 @@
 \alias{upload_file}
 \title{upload a file to Google Drive}
 \usage{
-upload_file(file_name, title = file_name, file_type = NULL, email = NULL,
-  token = get_access_cred(), ...)
+upload_file(file_name, title = basename(file_name), file_type = NULL,
+  email = NULL, token = get_access_cred(), ...)
 }
 \arguments{
 \item{file_name}{file name}
