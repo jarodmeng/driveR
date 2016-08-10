@@ -58,7 +58,8 @@ get_file_from_title <- function(title, token = get_access_cred()) {
 #' @param token a valid OAuth2.0 token
 #' @return the downloaded file name
 #' @export
-download_file <- function(file_id, file_name, token = get_access_cred()) {
+download_file <- function(file_id, file_name = tempfile(),
+                          token = get_access_cred()) {
   url <- paste(base_url, file_id, sep = "/")
   req <- GET(url, config = config(token = token),
              query = list(alt = "media"))

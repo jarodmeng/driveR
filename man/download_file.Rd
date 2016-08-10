@@ -4,7 +4,7 @@
 \alias{download_file}
 \title{Download a file from drive}
 \usage{
-download_file(file_id, file_name, token = get_access_cred())
+download_file(file_id, file_name = tempfile(), token = get_access_cred())
 }
 \arguments{
 \item{file_id}{the ID for the file}
